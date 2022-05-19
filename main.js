@@ -18,6 +18,5 @@ const solution = (a, b, c) => {
     } else {
         console.log('Please, enter \'a\' not equal 0');
     }
-    nhhjuuuuuuuuuuuuuuuuuuuuuuuuuuuuunjhmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmnhhhhhhhhhhhhhhhhhhhhhhhhhhh
 }
 
