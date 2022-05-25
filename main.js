@@ -83,6 +83,21 @@ const notInteractive = async (filename) => {
     process.exit();
 };
 
+const mode = () => {
+    rl.question('Which mode do you want to choose?\n' +
+                '   Press 1 to choose Interactive mode\n' + 
+                '   Press 2 to choose Not Interactive mode\n', function (mode) {
+                    mode = parseInt(mode);
+                    if (mode == 1){
+                        console.log('\nYou have chosen Interactive mode');
+                        interactive();
+                    } else if (mode == 2) {
+                        console.log('\nYou have chosen Not Interactive mode\nWhich file do you want to read?');
+                        rl.on('line', (filename) => {
+                            notInteractive(filename);
+                        });
+                    }
+                })
+}
 
-//interactive();
-notInteractive('text.txt');
+mode()
