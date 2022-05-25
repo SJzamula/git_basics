@@ -60,7 +60,29 @@ const interactive = async () => {
     interactive();
 }
 
+const notInteractive = async (filename) => {
+    if (fs.existsSync(filename)) {
+        console.log(`Numbers input from ${filename}`)
+        const fileContent = fs.readFileSync(filename, "utf-8");
+            const numbers = fileContent.split(" ");
+            const [a, b, c] = [
+                parseFloat(numbers[0]),
+                parseFloat(numbers[1]),
+                parseFloat(numbers[2]),
+            ];
+            if (a == 0) {
+                console.log("a can't be equal 0\n");
+                return;
+            }
+            console.log(`a = ${a}\nb = ${b}\nc = ${c}`);
+            solution(a, b, c);
+
+    } else {
+        console.log("There is no such file in this directory");
+    }
+    process.exit();
+};
 
 
-interactive();
-//notInteractive();
+//interactive();
+notInteractive('text.txt');
